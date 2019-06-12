@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "name": "snakey-ui",
+  "description": "",
+  "private": true,
+  "scripts": {
+
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}
