@@ -3,7 +3,7 @@ import FirstComponent from "../FirstComponent.vue";
 import SecondComponent from "../SecondComponent.vue"
 
 var vm = new Vue({
-    el: "#nt-page-home",
+    el: "#snakey",
     components: {
         FirstComponent,
         SecondComponent

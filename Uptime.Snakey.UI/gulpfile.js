@@ -1,4 +1,4 @@
-﻿/// <binding AfterBuild='sass' ProjectOpened='sass:watch' />
+/// <binding BeforeBuild='sass' ProjectOpened='sass:watch' />
 'use strict';
 
 var gulp = require('gulp');
