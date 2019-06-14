@@ -8,9 +8,6 @@
     "build:components": "webpack --mode=production --config ./webpack/components.config.js"
   },
   "dependencies": {
-    "@types/bootstrap": "^4.2.0",
-    "@types/jquery": "^3.3.29",
-    "@types/jquery.validation": "^1.16.5",
     "@types/nprogress": "^0.0.29",
     "file-system": "^2.2.2",
     "typescript": "^3.3.1",
@@ -31,7 +28,9 @@
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.3",
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "gulp": "4.0.2",
+    "gulp-sass": "4.0.2"
   },
   "-vs-binding": {
     "ProjectOpened": [
