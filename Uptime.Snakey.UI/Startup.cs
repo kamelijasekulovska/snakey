@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace Uptime.Snakey.UI
 {
@@ -37,7 +36,7 @@ namespace Uptime.Snakey.UI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -50,19 +49,17 @@ namespace Uptime.Snakey.UI
 
             app.UseStaticFiles();
 
-            app.UseRouting();
+            app.UseRouting(routes =>
+            {
+                routes.MapApplication();
+                routes.MapControllerRoute(
+                    name: "default",
+                    template: "{controller=Snakey}/{action=Index}/{id?}");
+            });
 
             app.UseCookiePolicy();
 
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            { 
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Snakey}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
-            });
         }
     }
 }

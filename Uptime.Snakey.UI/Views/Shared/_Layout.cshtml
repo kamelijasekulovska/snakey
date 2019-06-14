@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Snakey</title>
 
+    
     <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.min.css" />
     </environment>
-    <environment exclude="Development">
-    </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
+    
 </head>
 <body>
     <header>
@@ -29,22 +29,22 @@
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
+           
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - Snakey, Kamelija i Eleni
+            &copy; 2019 - Snakey
         </div>
     </footer>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-    </environment>
+
+    
     <environment exclude="Development">
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: true)
 </body>
 </html>
