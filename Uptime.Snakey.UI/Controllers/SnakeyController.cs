@@ -30,8 +30,6 @@ namespace Uptime.Snakey.UI.Controllers
 
 		public IActionResult GetRssFeed()
 		{
-
-
 			return Content(JsonConvert.SerializeObject(rssFeedService.GetRssFeed(), Formatting.Indented,
 		   new JsonSerializerSettings
 		   {
@@ -52,7 +50,6 @@ namespace Uptime.Snakey.UI.Controllers
 		public IActionResult Index()
 		{
 			//GET RssFeed from Uptime.Snakey.Service
-
 			return View();
 		}
 

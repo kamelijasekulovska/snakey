@@ -15,6 +15,9 @@ namespace Uptime.Snakey.Service
 
 			// Load the RSS file from the RSS URL
 			rssXmlDoc.Load("https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss");
+			XmlNamespaceManager namespaceManager = new XmlNamespaceManager(rssXmlDoc.NameTable);
+			namespaceManager.AddNamespace("media", "http://search.yahoo.com/mrss/");
+
 
 			// Parse the Items in the RSS file
 			XmlNodeList rssNodes = rssXmlDoc.GetElementsByTagName("item");
@@ -40,11 +43,15 @@ namespace Uptime.Snakey.Service
 				rssSubNode = rssNode.SelectSingleNode("pubDate");
 				string pubDate = rssSubNode != null ? rssSubNode.InnerText : "";
 
+				var media = rssNode.SelectSingleNode("media:content", namespaceManager);
+				string url = media != null ? media.OuterXml : "";
+
 				item.Title = title;
 				item.Link = link;
 				item.Author = author;
 				item.Description = description;
 				item.PublishedDate = pubDate;
+				item.ImageUrl = url;
 
 				feedList.Add(item);
 
