@@ -31,27 +31,34 @@ namespace Uptime.Snakey.Service
 				XmlNode rssSubNode = rssNode.SelectSingleNode("title");
 				string title = rssSubNode != null ? rssSubNode.InnerText : "";
 
-				rssSubNode = rssNode.SelectSingleNode("link");
-				string link = rssSubNode != null ? rssSubNode.InnerText : "";
+				rssSubNode = rssNode.SelectSingleNode("description");
+				string description = rssSubNode != null ? rssSubNode.InnerText : "";
+
+				rssSubNode = rssNode.SelectSingleNode("url");
+				string url = rssSubNode != null ? rssSubNode.InnerText : "";
+
+				rssSubNode = rssNode.SelectSingleNode("category");
+				string category = rssSubNode != null ? rssSubNode.InnerText : "";
 
 				rssSubNode = rssNode.SelectSingleNode("author");
 				string author = rssSubNode != null ? rssSubNode.InnerText : "";
 
-				rssSubNode = rssNode.SelectSingleNode("description");
-				string description = rssSubNode != null ? rssSubNode.InnerText : "";
+				var media = rssNode.SelectSingleNode("media:content", namespaceManager);
+				string imageUrl = media != null ? media.OuterXml : "";
 
 				rssSubNode = rssNode.SelectSingleNode("pubDate");
 				string pubDate = rssSubNode != null ? rssSubNode.InnerText : "";
 
-				var media = rssNode.SelectSingleNode("media:content", namespaceManager);
-				string url = media != null ? media.OuterXml : "";
 
 				item.Title = title;
-				item.Link = link;
-				item.Author = author;
 				item.Description = description;
+				item.Url = url;
+				item.Category = category;
+				item.Author = author;
+				item.ImageUrl = imageUrl;
 				item.PublishedDate = pubDate;
-				item.ImageUrl = url;
+				
+				
 
 				feedList.Add(item);
 
