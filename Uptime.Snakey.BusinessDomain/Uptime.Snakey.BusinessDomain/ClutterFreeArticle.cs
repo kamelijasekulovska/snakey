@@ -9,15 +9,15 @@ namespace Uptime.Snakey.BusinessDomain
     {
 		//TODO
 		public string Title { get; set; }
-		[JsonProperty(PropertyName = "content")]
+		[JsonProperty(PropertyName = "Content")]
 		public string Description { get; set; }
-		[JsonProperty(PropertyName = "url")]
+		[JsonProperty(PropertyName = "Url")]
 		public string Link { get; set; }
 		public string Category { get; set; }
 		public string Author { get; set; }
-		[JsonProperty(PropertyName = "lead_image_url")]
+		[JsonProperty(PropertyName = "Lead_image_url")]
 		public string ImageUrl { get; set; }
-		[JsonProperty(PropertyName = "date_published")]
+		[JsonProperty(PropertyName = "Date_published")]
 		public string PublishedDate { get; set; }
 	}
 }
