@@ -11,6 +11,7 @@ namespace Uptime.Snakey.BusinessDomain
 		public string Title { get; set; }
 		[JsonProperty(PropertyName = "content")]
 		public string Description { get; set; }
+		[JsonProperty(PropertyName = "url")]
 		public string Link { get; set; }
 		public string Category { get; set; }
 		public string Author { get; set; }
