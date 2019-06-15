@@ -34,7 +34,7 @@ namespace Uptime.Snakey.Service
 				rssSubNode = rssNode.SelectSingleNode("description");
 				string description = rssSubNode != null ? rssSubNode.InnerText : "";
 
-				rssSubNode = rssNode.SelectSingleNode("url");
+				rssSubNode = rssNode.SelectSingleNode("link");
 				string url = rssSubNode != null ? rssSubNode.InnerText : "";
 
 				rssSubNode = rssNode.SelectSingleNode("category");
@@ -52,7 +52,7 @@ namespace Uptime.Snakey.Service
 
 				item.Title = title;
 				item.Description = description;
-				item.Url = url;
+				item.Link = url;
 				item.Category = category;
 				item.Author = author;
 				item.ImageUrl = imageUrl;
