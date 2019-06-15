@@ -15,4 +15,9 @@
     <Folder Include="Front-Components\src\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Uptime.Snakey.Service\Uptime.Snakey.Service\Uptime.Snakey.Service.csproj" />
+  </ItemGroup>
+
 </Project>

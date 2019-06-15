@@ -7,6 +7,6 @@ namespace Uptime.Snakey.Service.Interfaces
 {
     public interface IRssFeedService
     {
-        IList<Feed> GetRssFeed();
+        public IList<Feed> GetRssFeed();
     }
 }
