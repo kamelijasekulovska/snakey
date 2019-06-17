@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
    - [.NET Core 3.0 >= preview 2](https://dotnet.microsoft.com/download/dotnet-core/3.0)
    - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 2. Run the project and wait till all packages are installed
-3. Browser will open and navigate to [http://localhost:63463/).
+3. Browser will open and navigate to [http://localhost:63463/].
 
 ## Built With
 
@@ -30,6 +30,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 * **Kamelija Sekulovska**
 * **Eleni Mickovska**
+
+## Issue
+
+The second article throws 505 error exception because it redirects to a page where an authentication is required.
 
 ## License
 
