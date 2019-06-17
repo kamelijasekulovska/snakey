@@ -25,10 +25,13 @@
         <div class="modal" v-if="showArticle">
             <button class="close" @click="show"><p>x</p></button>
             <div class="modal-inner">
-                <h2>{{clutterFreeArticle.Title}}</h2>
-                <small>{{clutterFreeArticle.Author}}</small>
-                <small>{{clutterFreeArticle.Date_published}}</small>
-                <small>{{clutterFreeArticle.Category}}</small>
+                <h2 class="modal-title">{{clutterFreeArticle.Title}}</h2>
+                <div class="modal-info">
+                    <small>{{clutterFreeArticle.Author}}</small>
+                    <small>{{clutterFreeArticle.Date_published}}</small>
+                    <small>{{clutterFreeArticle.Category}}</small>
+                </div>
+                
                 <div v-html="clutterFreeArticle.Content" class="modal-content"></div>
             </div>
         </div>
@@ -54,7 +57,7 @@
             axios.get('http://localhost:63463/Snakey/GetRssFeed').then((response) => {
                 this.articles = response.data;
                 for (var i = 0; i < this.articles.length; i++) {
-
+                 
                     var mediaUrl = this.articles[i].ImageUrl;
                     if (mediaUrl == "") {
                         this.articles[i].ImageUrl = "https://www.wav1.com/wp-content/uploads/2014/01/blackimg.png"
@@ -63,9 +66,11 @@
                         var url = mediaUrl.substring(1, mediaUrl.length - 1).split(" ")[1];
                         var cleanUrl = url.substring(5, url.length - 1);
                         this.articles[i].ImageUrl = cleanUrl;
+
                     }
 
                 }
+                
             })
                 .catch((e) => {
                     console.error(e)
@@ -114,7 +119,7 @@
             h3 {
                 font-size: 22px;
                 font-weight: 600;
-                text-transform: uppercase;
+                text-align:center;
                 margin: 5px 0 10px 0;
                 transition: color 0.3s ease;
                 cursor: pointer;
@@ -208,11 +213,32 @@ button {
         display: flex;
         flex-direction: column;
         align-items: center;
+        .modal-title{
+                text-transform:uppercase;
+                   }
+        .modal-info{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-weight: 600;
+                color: #9f9c9c;
+        }
+        .modal-img{
+                display: flex;
+                align-items: center;
+                margin: 40px 0;
+                img{
+                           margin: 0 auto;
+                           width: 80%;
+                   }
+        }
     }
     .modal-content {
         text-align: center;
         width: 90%;
         overflow: hidden;
+        font-family: "Helvetica";
+        font-size: 15px;
     }
 }
 .close {
