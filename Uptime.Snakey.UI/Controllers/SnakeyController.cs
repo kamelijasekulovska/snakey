@@ -49,7 +49,6 @@ namespace Uptime.Snakey.UI.Controllers
 
 		public IActionResult Index()
 		{
-			//GET RssFeed from Uptime.Snakey.Service
 			return View();
 		}
 

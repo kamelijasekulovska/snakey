@@ -11,6 +11,7 @@ namespace Uptime.Snakey.Service
     {
         public ClutterFreeArticle GetCleanArticleFrom(string url)
         {
+			// POST request to uptime-mercury webparser 
 			var httpPostRequest = (HttpWebRequest)WebRequest.Create("https://uptime-mercury-api.azurewebsites.net/webparser");
 			httpPostRequest.ContentType = "application/json";
 
@@ -25,6 +26,7 @@ namespace Uptime.Snakey.Service
 				streamWriter.Close();
 			}
 
+
 			HttpWebResponse httpResponse = (HttpWebResponse)httpPostRequest.GetResponse();
 
 
@@ -34,6 +36,7 @@ namespace Uptime.Snakey.Service
 				stringResult = streamReader.ReadToEnd();
 			}
 
+			// Deserialize the JSON response into a ClutterFreeArticle object
 			ClutterFreeArticle deserialize = JsonConvert.DeserializeObject<ClutterFreeArticle>(stringResult, new JsonSerializerSettings
 			{
 				MissingMemberHandling = MissingMemberHandling.Ignore,
