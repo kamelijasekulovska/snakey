@@ -33,7 +33,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Issue
 
-The second article throws 505 error exception because it redirects to a page where an authentication is required.
+The second article throws 500 Internal Server Error exception because it redirects to a page where an authentication is required.
 
 ## License
 
