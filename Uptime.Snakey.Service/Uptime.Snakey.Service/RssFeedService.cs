@@ -49,16 +49,13 @@ namespace Uptime.Snakey.Service
 				rssSubNode = rssNode.SelectSingleNode("pubDate");
 				string pubDate = rssSubNode != null ? rssSubNode.InnerText : "";
 
-
 				item.Title = title;
 				item.Description = description;
 				item.Link = url;
 				item.Category = category;
 				item.Author = author;
 				item.ImageUrl = imageUrl;
-				item.PublishedDate = pubDate;
-				
-				
+				item.PublishedDate = pubDate;			
 
 				feedList.Add(item);
 

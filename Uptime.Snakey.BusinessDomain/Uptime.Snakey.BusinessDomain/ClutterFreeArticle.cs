@@ -7,7 +7,6 @@ namespace Uptime.Snakey.BusinessDomain
 {
     public class ClutterFreeArticle
     {
-		//TODO
 		public string Title { get; set; }
 		[JsonProperty(PropertyName = "Content")]
 		public string Description { get; set; }
